@@ -4,95 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>リトルベビーログ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: #f5f5f5;
-      color: #1a1a1a;
+      font-family: "M PLUS Rounded 1c", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(160deg, #fff1f5 0%, #fff8f0 45%, #f0f7ff 100%);
+      color: #5a4a4a;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     .container {
-      max-width: 680px;
+      max-width: 520px;
       margin: 0 auto;
-      padding: 64px 24px 64px;
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+    .app-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      box-shadow: 0 8px 20px rgba(217, 140, 163, 0.25);
+      margin: 0 0 20px;
     }
     h1 {
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 26px;
+      font-weight: 700;
       margin: 0 0 8px;
-      color: #1a1a1a;
+      color: #d98ca3;
+      letter-spacing: 0.05em;
     }
     .tagline {
-      font-size: 15px;
-      color: #666;
-      margin: 0 0 48px;
+      font-size: 14px;
+      color: #9a8686;
+      margin: 0 0 40px;
+      line-height: 1.6;
     }
     .link-list {
       list-style: none;
       padding: 0;
       margin: 0;
+      text-align: left;
     }
     .link-item {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      background: #fff;
+      border: none;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(217, 140, 163, 0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .link-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(217, 140, 163, 0.22);
     }
     .link-item a {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
+      gap: 14px;
+      padding: 18px 22px;
       text-decoration: none;
-      color: #1a1a1a;
+      color: #5a4a4a;
       font-size: 16px;
+      font-weight: 700;
     }
-    .link-item a:hover { background: #f8f8f8; border-radius: 8px; }
-    .arrow { color: #bbb; }
+    .link-icon {
+      font-size: 22px;
+    }
+    .link-text {
+      flex: 1;
+    }
+    .arrow {
+      color: #f0b4c4;
+      font-size: 18px;
+    }
     footer {
-      margin-top: 64px;
+      margin-top: 56px;
       font-size: 12px;
-      color: #aaa;
+      color: #c9b8b8;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <img class="app-icon" src="/assets/little-baby-log-icon.png" alt="リトルベビーログ">
     <h1>リトルベビーログ</h1>
     <p class="tagline">早産・NICU経験のある赤ちゃんの成長を記録するアプリ</p>
 
     <ul class="link-list">
       <li class="link-item">
         <a href="/little-baby-log/about">
-          <span>このアプリについて</span>
+          <span class="link-icon">📄</span>
+          <span class="link-text">このアプリについて</span>
           <span class="arrow">›</span>
         </a>
       </li>
       <li class="link-item">
         <a href="/little-baby-log/terms">
-          <span>利用規約</span>
+          <span class="link-icon">📜</span>
+          <span class="link-text">利用規約</span>
           <span class="arrow">›</span>
         </a>
       </li>
       <li class="link-item">
         <a href="/little-baby-log/privacy-policy">
-          <span>プライバシーポリシー</span>
+          <span class="link-icon">🔒</span>
+          <span class="link-text">プライバシーポリシー</span>
           <span class="arrow">›</span>
         </a>
       </li>
       <li class="link-item">
         <a href="/little-baby-log/oss-licenses">
-          <span>オープンソースライセンス</span>
+          <span class="link-icon">🧩</span>
+          <span class="link-text">オープンソースライセンス</span>
           <span class="arrow">›</span>
         </a>
       </li>
     </ul>
 
-    <footer>
-      <p>© 2026 Teeda Studio</p>
-    </footer>
+    <footer>© 2026 Teeda Studio</footer>
   </div>
 </body>
 </html>
