@@ -4,76 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>利用規約 | リトルベビーログ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: #f5f5f5;
-      color: #1a1a1a;
+      font-family: "M PLUS Rounded 1c", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(160deg, #eaf7f0 0%, #fff8f0 45%, #eef8f6 100%);
+      background-attachment: fixed;
+      color: #4a5a52;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     .container {
       max-width: 680px;
-      margin: 0 auto;
-      padding: 40px 24px 64px;
+      margin: 24px auto;
+      padding: 36px 28px 40px;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(95, 168, 143, 0.15);
     }
-    header {
-      margin-bottom: 40px;
+    @media (max-width: 480px) {
+      .container { margin: 12px; padding: 28px 20px 32px; border-radius: 22px; }
     }
+    header { margin-bottom: 32px; text-align: center; }
     .app-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 13px;
-      color: #888;
-      margin: 0 0 8px;
+      font-weight: 700;
+      color: #5fa88f;
+      text-decoration: none;
+      background: #eaf7f0;
+      border-radius: 999px;
+      padding: 4px 14px 4px 5px;
+      margin: 0 0 16px;
     }
+    .app-name img { width: 24px; height: 24px; border-radius: 7px; }
     h1 {
-      font-size: 26px;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 700;
       margin: 0;
-      color: #1a1a1a;
+      color: #5fa88f;
+      letter-spacing: 0.05em;
+    }
+    h1::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #a8d8c0, #d6ecf0);
+      margin: 14px auto 0;
     }
     h2 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 40px 0 12px;
-      color: #1a1a1a;
+      font-size: 17px;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      color: #4a5a52;
+      padding-left: 12px;
+      border-left: 5px solid #a8d8c0;
+      border-radius: 2px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 24px 0 8px;
+      color: #5fa88f;
     }
     p {
       font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.9;
       margin: 0 0 16px;
-      color: #333;
+      color: #4a5a52;
     }
-    ol {
+    ul, ol {
       font-size: 15px;
-      line-height: 1.8;
-      color: #333;
+      line-height: 1.9;
+      color: #4a5a52;
       padding-left: 24px;
       margin: 0 0 16px;
     }
     li { margin-bottom: 4px; }
+    li::marker { color: #7cc2a5; }
+    a { color: #5fa88f; }
     hr {
       border: none;
-      border-top: 1px solid #e0e0e0;
-      margin: 32px 0;
+      border-top: 2px dotted #cfe7da;
+      margin: 28px 0;
     }
-    .supplementary {
-      font-size: 14px;
-      color: #555;
-    }
+    .supplementary, .effective-date { font-size: 14px; color: #7f9488; }
     footer {
-      margin-top: 64px;
+      margin-top: 48px;
       font-size: 12px;
-      color: #aaa;
+      color: #aebfb6;
+      text-align: center;
     }
-    nav {
-      margin-top: 8px;
-      font-size: 13px;
-    }
+    footer p { font-size: 12px; color: #aebfb6; margin: 0; }
+    nav { margin-top: 10px; font-size: 13px; }
     nav a {
-      color: #5a7fa8;
+      display: inline-block;
+      color: #5fa88f;
       text-decoration: none;
-      margin-right: 16px;
+      margin: 0 8px 6px;
     }
     nav a:hover { text-decoration: underline; }
   </style>
@@ -81,7 +117,7 @@
 <body>
   <div class="container">
     <header>
-      <p class="app-name">リトルベビーログ</p>
+      <a class="app-name" href="../index.html"><img src="../../assets/little-baby-log-icon.png" alt="">リトルベビーログ</a>
       <h1>利用規約</h1>
     </header>
 
