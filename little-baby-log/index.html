@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>リトルベビーログ</title>
+  <title>リトルベビーログ | 早産児向けの育児記録アプリ</title>
+  <meta name="description" content="早産児向けの育児記録アプリ。修正月齢がカレンダーでわかる。修正月齢と、その日の記録を日記に残せる。体重・身長・頭囲を成長曲線で見られる。iPhone向け。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
@@ -12,17 +13,30 @@
     body {
       font-family: "M PLUS Rounded 1c", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       background: linear-gradient(160deg, #eaf7f0 0%, #fff8f0 45%, #eef8f6 100%);
+      background-attachment: fixed;
       color: #4a5a52;
       margin: 0;
-      padding: 0;
       min-height: 100vh;
     }
     .container {
-      max-width: 520px;
+      max-width: 560px;
       margin: 0 auto;
-      padding: 72px 24px 64px;
-      text-align: center;
+      padding: 56px 24px 48px;
     }
+    section { margin-bottom: 64px; }
+    h1, h2 { color: #5fa88f; letter-spacing: 0.05em; }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 24px;
+      padding-left: 12px;
+      border-left: 5px solid #a8d8c0;
+      border-radius: 2px;
+    }
+    p { font-size: 15px; line-height: 1.9; margin: 0 0 16px; }
+
+    /* ファーストビュー */
+    .hero { text-align: center; }
     .app-icon {
       width: 88px;
       height: 88px;
@@ -30,100 +44,124 @@
       box-shadow: 0 8px 20px rgba(95, 168, 143, 0.25);
       margin: 0 0 20px;
     }
-    h1 {
-      font-size: 26px;
-      font-weight: 700;
-      margin: 0 0 8px;
-      color: #5fa88f;
-      letter-spacing: 0.05em;
-    }
-    .tagline {
-      font-size: 14px;
-      color: #7f9488;
-      margin: 0 0 40px;
-      line-height: 1.6;
-    }
-    .link-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
-    .link-item {
-      border: none;
-      border-radius: 20px;
-      margin-bottom: 14px;
+    .hero h1 { font-size: 26px; line-height: 1.5; margin: 0 0 12px; }
+    .hero .sub { font-size: 15px; color: #6b8076; margin: 0 0 28px; }
+    .badge { display: inline-block; }
+    .badge img { height: 48px; width: auto; display: block; }
+    .platform-note { font-size: 12px; color: #7f9488; margin: 10px 0 0; }
+
+    /* スクリーンショット */
+    .shot {
       background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(95, 168, 143, 0.15);
+      overflow: hidden;
+    }
+    .shot img { width: 100%; height: auto; display: block; }
+    .hero .shot { width: 240px; margin: 32px auto 0; }
+
+    /* できること */
+    .feature {
+      background: #ffffff;
+      border-radius: 24px;
       box-shadow: 0 6px 16px rgba(95, 168, 143, 0.15);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .link-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(95, 168, 143, 0.22);
+    .feature h3 { font-size: 16px; margin: 0 0 12px; color: #4a5a52; line-height: 1.6; }
+    .feature p { font-size: 14px; color: #6b8076; margin: 0 0 20px; }
+    .feature .shot { width: 240px; margin: 0 auto; }
+    .source { font-size: 12px; color: #7f9488; line-height: 1.7; }
+
+    /* 開発者ストーリー */
+    .story {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 6px 16px rgba(95, 168, 143, 0.15);
+      padding: 28px 22px 12px;
     }
-    .link-item a {
+
+    /* フッター */
+    .cta { text-align: center; }
+    .link-list { list-style: none; padding: 0; margin: 40px 0 0; text-align: left; }
+    .link-list li { border-bottom: 1px solid #d9eae1; }
+    .link-list a {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 18px 22px;
+      justify-content: space-between;
+      padding: 14px 4px;
       text-decoration: none;
       color: #4a5a52;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
     }
-    .link-icon {
-      font-size: 22px;
-    }
-    .link-text {
-      flex: 1;
-    }
-    .arrow {
-      color: #a8d8c0;
-      font-size: 18px;
-    }
-    footer {
-      margin-top: 56px;
-      font-size: 12px;
-      color: #aebfb6;
-    }
+    .link-list a::after { content: "›"; color: #a8d8c0; }
+    .contact { font-size: 13px; color: #7f9488; margin: 24px 0 0; text-align: center; }
+    .contact a { color: #5fa88f; }
+    footer { margin-top: 32px; font-size: 12px; color: #aebfb6; text-align: center; }
   </style>
 </head>
 <body>
   <div class="container">
-    <img class="app-icon" src="../assets/little-baby-log-icon.png" alt="リトルベビーログ">
-    <h1>リトルベビーログ</h1>
-    <p class="tagline">早産・NICU経験のある赤ちゃんの成長を記録するアプリ</p>
 
-    <ul class="link-list">
-      <li class="link-item">
-        <a href="about/index.html">
-          <span class="link-icon">📄</span>
-          <span class="link-text">このアプリについて</span>
-          <span class="arrow">›</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="terms/index.html">
-          <span class="link-icon">📜</span>
-          <span class="link-text">利用規約</span>
-          <span class="arrow">›</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="privacy-policy/index.html">
-          <span class="link-icon">🔒</span>
-          <span class="link-text">プライバシーポリシー</span>
-          <span class="arrow">›</span>
-        </a>
-      </li>
-      <li class="link-item">
-        <a href="oss-licenses/index.html">
-          <span class="link-icon">🧩</span>
-          <span class="link-text">オープンソースライセンス</span>
-          <span class="arrow">›</span>
-        </a>
-      </li>
-    </ul>
+    <section class="hero">
+      <img class="app-icon" src="../assets/little-baby-log-icon.png" alt="リトルベビーログ">
+      <h1>小さく生まれた子の、<br>毎日を残す。</h1>
+      <p class="sub">早産児向けの育児記録アプリ。<br>修正月齢がカレンダーでわかる</p>
+      <a class="badge" href="https://apps.apple.com/jp/app/%E3%83%AA%E3%83%88%E3%83%AB%E3%83%99%E3%83%93%E3%83%BC%E3%83%AD%E3%82%B0/id6762253761">
+        <img src="assets/app-store-badge-ja.svg" alt="App Storeでダウンロード">
+      </a>
+      <p class="platform-note">iPhone向けアプリです</p>
+      <div class="shot"><img src="assets/screen-list.jpg" alt="記録一覧の画面" width="600" height="1304"></div>
+    </section>
+
+    <section>
+      <h2>できること</h2>
+
+      <div class="feature">
+        <h3>カレンダーに、修正月齢が出る</h3>
+        <p>日付ごとに、修正月齢が表示されます。</p>
+        <div class="shot"><img src="assets/screen-calendar.jpg" alt="カレンダーの画面" width="600" height="1304" loading="lazy"></div>
+      </div>
+
+      <div class="feature">
+        <h3>修正月齢と、その日の記録を日記に残せる</h3>
+        <p>その日の様子を、修正月齢といっしょに書き残せます。</p>
+        <div class="shot"><img src="assets/screen-diary.jpg" alt="記録の詳細画面" width="600" height="1304" loading="lazy"></div>
+      </div>
+
+      <div class="feature">
+        <h3>体重・身長・頭囲を、成長曲線で見られる</h3>
+        <p>修正月齢を基準に、成長曲線に記録を重ねて見られます。</p>
+        <div class="shot"><img src="assets/screen-growth.jpg" alt="成長曲線の画面" width="600" height="1304" loading="lazy"></div>
+        <p class="source" style="margin-top:16px;">出典: こども家庭庁「令和5年乳幼児身体発育調査」</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>このアプリをつくった理由</h2>
+      <div class="story">
+        <p>【仮置き・後で修正】</p>
+        <p>上の子は、25週・800gで生まれました。搾乳をして、面会に通う毎日でした。</p>
+        <p>ベビーダイアリーを買ったものの、何をどう書けばいいのか分からず、白いページが増えていきました。</p>
+        <p>下の子が生まれたとき、上の子はこの月齢の頃どうだったのか、思い出したくなりました。生まれた日ではなく、修正月齢で並べて見返せる記録があればいい。そう考えて、このアプリをつくりました。</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <a class="badge" href="https://apps.apple.com/jp/app/%E3%83%AA%E3%83%88%E3%83%AB%E3%83%99%E3%83%93%E3%83%BC%E3%83%AD%E3%82%B0/id6762253761">
+        <img src="assets/app-store-badge-ja.svg" alt="App Storeでダウンロード">
+      </a>
+      <p class="platform-note">iPhone向けアプリです</p>
+
+      <ul class="link-list">
+        <li><a href="about/index.html">このアプリについて</a></li>
+        <li><a href="terms/index.html">利用規約</a></li>
+        <li><a href="privacy-policy/index.html">プライバシーポリシー</a></li>
+        <li><a href="oss-licenses/index.html">オープンソースライセンス</a></li>
+      </ul>
+      <p class="contact">お問い合わせ: <a href="mailto:teeda.studio@gmail.com">teeda.studio@gmail.com</a></p>
+    </section>
 
     <footer>© 2026 Teeda Studio</footer>
   </div>
